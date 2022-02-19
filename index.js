@@ -2,6 +2,9 @@ import { setMany } from './helpers/initializeIndexDb';
 import { sw_log, sw_error_log } from './helpers/loggers';
 import { avgDiff, cachedAvg, uncachedAvg, summary } from './helpers/metrics';
 
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+require('browser-env')
 /* gqlEndpoints: An array of endpoint URLs, as strings, to explicitly allow added endpoints to be queried from the client API.
  * useMetrics: Enable or disable saving caching metrics to IndexedDB.
  * cacheMethod: Desired strategy for serving/updating cached data to the client.
